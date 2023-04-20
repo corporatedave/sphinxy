@@ -15,7 +15,8 @@ author = 'WDH'
 
 extensions = [
     "sphinx.ext.autodoc",
-    "sphinx.ext.napoleon"
+    "sphinx.ext.napoleon",
+    "sphinx.ext.githubpages",
 ]
 
 autoclass_content = 'both'
