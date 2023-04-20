@@ -35,12 +35,26 @@ class Sphinx:
         return (self._riddle.question, hint)
 
     def check_riddle_answer(self, answer: str, return_hint: bool = False) -> str:
+        """
+            Evaluates the given answer to the riddle.
+
+            Args:
+                answer (str): The given answer to the riddle.
+                return_hint (bool, optional): Controls whether a hint for the riddle should
+                    be returned. Defaults to False.
+
+            Raises:
+                IncorrectAnswer: Exception for incorrect answer.
+
+            Returns:
+                str: The result of the evaluation of the answer.
+        """
         if self._riddle.check_answer(answer):
-            return "Your answer was correct. You may pass."
+         return "Your answer was correct. You may pass."
         elif return_hint:
-            return (
-                "Your answer was wrong. Hint: The answer starts with the letter "
-                f"'{self._riddle.get_hint()}'."
-            )
+         return (
+            "Your answer was wrong. Hint: The answer starts with the letter "
+            f"'{self._riddle.get_hint()}'."
+        )
         else:
-            raise IncorrectAnswer("Your answer was wrong. You shall not pass.")
+         raise IncorrectAnswer("Your answer was wrong. You shall not pass.")
